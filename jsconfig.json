@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "~/*": [
+                "src/*"
+              ],
+              "@assets/*": [
+                "assets/*"
+              ],
+              "@fonts/*": [
+                "fonts/*"
+              ],
+              "@languages/*": [
+                "languages/*"
+              ]
+        }
+    },
+    "exclude": [
+        "node-modules"
+    ]
+}

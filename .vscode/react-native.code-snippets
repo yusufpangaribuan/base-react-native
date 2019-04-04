@@ -1,0 +1,195 @@
+{
+  "ReactNativeComponent": {
+    "scope": "javascript",
+    "prefix": "ReactNativeComponent",
+    "body": [
+      "import React, { Component }              from \"react\";",
+      "import { withNavigation }                from \"react-navigation\";",
+      "import  Reducer                          from \"~/core/Reducer\";",
+      "import {",
+      "  View,",
+      "  Text",
+      "}                                        from \"react-native\";",
+      "import PropTypes                         from \"prop-types\";",
+      "import ${1:ComponentName}Presenter       from \"./${1:ComponentName}Presenter\";",
+      "import ${1:ComponentName}Style           from \"./${1:ComponentName}Style\";",
+      "import lang                              from \"~/lang\";",
+      "",
+      "class ${1:ComponentName}Component extends Component {",
+      "  presenter                 = new ${1:ComponentName}Presenter(this);",
+      "",
+      "  static propTypes          = {",
+      "    navigation  : PropTypes.object",
+      "  };",
+      "",
+      "  render() {",
+      "    //const {}            = this.state;",
+      "    const { navigation }  = this.props;",
+      "    return (",
+      "      <View>",
+      "        <Text>Content</Text>",
+      "      </View>",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "export default Reducer.connect(withNavigation(${1:ComponentName}Component), ${1:ComponentName}Presenter);"
+    ],
+    "description": "To generate  React Native Component"
+  },
+  "ReactNativePage": {
+    "scope": "javascript",
+    "prefix": "ReactNativePage",
+    "body": [
+      "import React, { Component }         from \"react\";",
+      "import  Reducer                     from \"~/core/Reducer\";",
+      "import {",
+      "  BackHandler,",
+      "  View,",
+      "  Text",
+      "}                                   from \"react-native\";",
+      "import PropTypes                    from \"prop-types\";",
+      "import ${1:PageName}Presenter       from \"./${1:PageName}Presenter\";",
+      "import ${1:PageName}Style           from \"./${1:PageName}Style\";",
+      "import { createNavigationOptions }  from \"~/helper/NavigatorHelper\";",
+      "import lang                         from \"~/lang\";",
+      "",
+      "class ${1:PageName}Page extends Component {",
+      "  presenter                 = new ${1:PageName}Presenter(this);",
+      "",
+      "  static navigationOptions  = createNavigationOptions(\"Title\");",
+      "  static propTypes          = {",
+      "    navigation  : PropTypes.object",
+      "  };",
+      "",
+      "  componentDidMount() {",
+      "    BackHandler.addEventListener(\"hardwareBackPress\", this.onBackButtonPressed.bind(this));",
+      "  }",
+      "",
+      "  componentWillUnmount() {",
+      "    BackHandler.removeEventListener(\"hardwareBackPress\", this.onBackButtonPressed.bind(this));",
+      "  }",
+      "",
+      "  onBackButtonPressed() {",
+      "    const { navigation } = this.props;",
+      "    navigation?.pop();",
+      "    return true;",
+      "  }",
+      "",
+      "  render() {",
+      "    //const {}            = this.state;",
+      "    const { navigation }  = this.props;",
+      "    return (",
+      "      <View>",
+      "        <Text>Content</Text>",
+      "      </View>",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "export default Reducer.connect(${1:PageName}Page, ${1:PageName}Presenter);"
+    ],
+    "description": "To generate  React Native Page"
+  },
+  "ReactNativePresenter": {
+    "scope": "javascript",
+    "prefix": "ReactNativePresenter",
+    "body": [
+      "import  Presenter          from \"~/core/Presenter\";",
+      "",
+      "export default class ${1:ComponentName}Presenter extends Presenter {",
+      "  constructor(component) {",
+      "    super(component);",
+      "    component.state = {};",
+      "  }",
+      "",
+      "  static mapDispatchToProps(dispatch) {",
+      "    return {};",
+      "  }",
+      "",
+      "  static mapStateToProps(state) {",
+      "    return {};",
+      "  }",
+      "}"
+    ],
+    "description": "To generate  React Native Component Presenter"
+  },
+  "ReactNativeReducer": {
+    "scope": "javascript",
+    "prefix": "ReactNativeReducer",
+    "body": [
+      "import { Reducer } from \"~/core/Presenter\";",
+      "",
+      "const actionEnum = {};",
+      "",
+      "export default Reducer.create();"
+    ],
+    "description": "To generate  React Native Component Reducer"
+  },
+  "ReactNativeReducerMethod": {
+    "scope": "javascript",
+    "prefix": "ReactNativeReducerMethod",
+    "body": [
+      "export const ${1:methodName} = () => ({",
+      "  type    : actionEnum.${2:ENUM_NAME},",
+      "  payload : {}",
+      "});"
+    ],
+    "description": "To generate  React Native Component Reducer"
+  },
+  "ReactNativeCombineReducer": {
+    "scope": "javascript",
+    "prefix": "ReactNativeCombineReducer",
+    "body": [
+      "import { combineReducers }  from \"redux\";",
+      "import { Reducer }          from \"~/core/Presenter\";",
+      "",
+      "const actionEnum = {};",
+      "",
+      "export default combineReducers(",
+      "  {",
+      "    ${1:componentReducerName} : Reducer.create()",
+      "  }",
+      ");"
+    ],
+    "description": "To combine  React Native Component Reducer"
+  },
+  "ReactNativeStyle": {
+    "scope": "javascript",
+    "prefix": "ReactNativeStyle",
+    "body": [
+      "import { StyleSheet } from \"react-native\";",
+      "import swatch         from \"~/config/swatch\";",
+      "",
+      "export default StyleSheet.create({",
+      "});"
+    ],
+    "description": "To generate  React Native Component Style"
+  },
+  "ReactNativeService": {
+    "scope": "javascript",
+    "prefix": "ReactNativeService",
+    "body": [
+      "import BaseService from \"./BaseService\";",
+      "",
+      "export default class ${1:ServiceName}Service extends BaseService {",
+      "",
+      "}"
+    ],
+    "description": "To generate  React Native Service Class"
+  },
+  "ReactNativeServiceMethod": {
+    "scope": "javascript",
+    "prefix": "ReactNativeServiceMethod",
+    "body": [
+      "async ${1:methodName}() {",
+      "  const options   = {",
+      "    method  : \"${2:POST}\",",
+      "    body    : JSON.stringify({})",
+      "  };",
+      "  return await this.fetch(\"${3:url}\", options);",
+      "}"
+    ],
+    "description": "To generate  React Native Service Class"
+  }
+}

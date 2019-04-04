@@ -1,0 +1,9 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 9100,
+  "expoServerNgrokUrl": "https://jf-jvd.anonymous.base.exp.direct",
+  "packagerNgrokUrl": "https://packager.jf-jvd.anonymous.base.exp.direct",
+  "ngrokPid": 7072
+}
