@@ -1,12 +1,14 @@
-import React from "react";
+import React                        from "react";
 import { createBottomTabNavigator } from "react-navigation-tabs";
-
+import HomePage                     from "~/pages/home/HomePage";
 
 export const config  = {
-  initialRouteName : "MainPage"
+  initialRouteName : "HomePage"
 };
 
-const MainPage = {};
+const MainPage = {
+  HomePage
+};
 
 export const route = {
   MainPage : {
@@ -15,5 +17,6 @@ export const route = {
       const currentRoute = navigation.state.routes[navigation.state.index];
       return MainPage[currentRoute.key].navigationOptions({ navigation }); 
     }
-  }
+  },
+  HomePage
 };

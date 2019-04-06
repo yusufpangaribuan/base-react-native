@@ -12,7 +12,8 @@ export default class App extends React.Component {
   fonts  = {
     "AvenirNext-Bold"     : require("./fonts/AvenirNext-Bold.ttf"),
     "AvenirNext-Medium"   : require("./fonts/AvenirNext-Medium.ttf"),
-    "Futura-Bold"         : require("./fonts/Futura-Bold.ttf")
+    "Futura-Bold"         : require("./fonts/Futura-Bold.ttf"),
+    "Avenir-Heavy"        : require("./fonts/Avenir-Heavy.ttf")
   };
   
   state  = {
