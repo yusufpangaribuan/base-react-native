@@ -9,7 +9,11 @@ export default class App extends React.Component {
 
   images = [];
   
-  fonts  = {};
+  fonts  = {
+    "AvenirNext-Bold"     : require("./fonts/AvenirNext-Bold.ttf"),
+    "AvenirNext-Medium"   : require("./fonts/AvenirNext-Medium.ttf"),
+    "Futura-Bold"         : require("./fonts/Futura-Bold.ttf")
+  };
   
   state  = {
     isReady : false
