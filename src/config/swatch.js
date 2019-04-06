@@ -1,0 +1,2 @@
+//color style
+export default {};
